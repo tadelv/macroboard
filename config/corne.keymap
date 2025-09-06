@@ -53,11 +53,23 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            bindings = <
-                &bt BT_CLR  &finder_downloads  &finder_desktop  &finder_home
+        /* default_layer { */
+        /*     bindings = < */
+        /*         &bt BT_CLR  &finder_downloads  &finder_desktop  &finder_home */
+        /*     >; */
+        /*     sensor-bindings = <&inc_dec_kp UP DOWN>; */
+        /* }; */
+
+        default {
+                      bindings = <
+  &kp Q         &kp W         &kp F        &kp P        &kp B        &kp J        &finder_downloads            &finder_desktop         &finder_home         &none
+  &hrm LSHFT A  &hrm LCTRL R  &hrm LALT S  &hrm LGUI T  &kp G        &kp M        &hrm RGUI N      &hrm RALT E   &hrm LCTRL I  &hrm RSHFT O
+  &kp Z         &kp X         &kp C        &kp D        &kp V        &kp K        &kp H            &kp COMMA     &kp DOT       &kp FSLH
+                              &lt 4 ESC    &lt 1 SPACE  &lt 5 TAB    &lt 6 ENTER  &lt 2 BACKSPACE  &lt 3 DELETE
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN>;
-        };
+
+            label = "base";
+
+        }
     };
 };
