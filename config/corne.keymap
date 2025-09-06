@@ -9,6 +9,8 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+    chosen { zmk,matrix_transform = &five_column_transform; };
+
     macros {
         finder_home: finder_home {
             compatible = "zmk,behavior-macro";
