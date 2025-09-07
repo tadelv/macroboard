@@ -65,7 +65,7 @@
                 &kp M         &kp COMMA     &kp DOT       &kp FSLH      &finder_home
 
                 /* Thumb cluster (adjust as needed) */
-                &lt 4 ESC     &lt 1 SPACE    &lt 5 TAB      &lt 6 ENTER    &lt 2 BACKSPACE
+                &lt 4 ESC     &lt 1 SPACE    &lt 5 TAB 
             >;
         };
     };
