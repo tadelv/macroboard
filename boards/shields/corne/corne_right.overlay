@@ -1,0 +1,12 @@
+
+#include "corne.dtsi"
+
+/ {
+  chosen {
+    zmk,matrix-transform = &corne_transform;
+  };
+
+  &corne_transform {
+    col-offset = <0>; // Right half is the whole 5 columns in this case
+  };
+};
