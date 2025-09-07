@@ -7,6 +7,6 @@
   };
 
   &corne_transform {
-    col-offset = <0>; // Right half is the whole 5 columns in this case
+    col-offset = <5>; // Right half is the whole 5 columns in this case
   };
 };
