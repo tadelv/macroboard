@@ -1,23 +1,24 @@
-# This file generates the GitHub Actions matrix.
-# For simple board + shield combinations, add them to the top level board and
-# shield arrays, for more control, add individual board + shield combinations
-# to the `include` property. You can also use the `cmake-args` property to
-# pass flags to the build command, `snippet` to add a Zephyr snippet, and
-# `artifact-name` to assign a name to distinguish build outputs from each other:
-#
-# board: [ "nice_nano_v2" ]
-# shield: [ "corne_left", "corne_right" ]
-# include:
-#   - board: bdn9_rev2
-#   - board: nice_nano_v2
-#     shield: reviung41
-#   - board: nice_nano_v2
-#     shield: corne_left
-#     snippet: studio-rpc-usb-uart
-#     cmake-args: -DCONFIG_ZMK_STUDIO=y
-#     artifact-name: corne_left_with_studio
-#
----
-include:
-  - board: nice_nano_v2
-    shield: corne_right
+# zmk-config/build.yaml
+
+boards:
+  nice_nano_v2:   # Your MCU board
+    overlays:
+      - corne_right.overlay
+
+config:
+  # Path to your ZMK config folder
+  zmk_config: config
+
+extra_modules:
+  - macroboard  # If you have a local module for macros
+
+keymap:
+  file: corne.keymap
+
+# Optional: set environment variables for Zephyr SDK (if needed)
+env:
+  ZEPHYR_TOOLCHAIN_VARIANT: zephyr
+  ZEPHYR_SDK_INSTALL_DIR: /opt/zephyr-sdk-0.16.3
+
+# Optional: pick shield to include
+shield: corne_right
